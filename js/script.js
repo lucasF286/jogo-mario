@@ -1,5 +1,6 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
+const timer = document.querySelector(".timer");
 
 window.addEventListener("keypress", (e) => {
     e.preventDefault();
@@ -33,3 +34,5 @@ const loop = setInterval(() => {
     }
 
 }, 10);
+
+
