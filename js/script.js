@@ -1,6 +1,9 @@
+let pontuacaoLoop;
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const timer = document.querySelector(".timer");
+
+pontuacao(1);
 
 window.addEventListener("keypress", (e) => {
     e.preventDefault();
@@ -17,7 +20,6 @@ window.addEventListener("keypress", (e) => {
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
-    console.log(marioPosition);  
     
     if (pipePosition <= 120 && pipePosition > 0 &&marioPosition < 80) {
         pipe.style.animation = 'none';
@@ -31,8 +33,34 @@ const loop = setInterval(() => {
         mario.style.marginLeft = "50px";
 
         clearInterval(loop);
+
+        mudaMario();
+
+        clearTimeout(pontuacaoLoop);
+
+        setTimeout("gameOver()", 100);
+
     }
 
 }, 10);
+
+function pontuacao (pontos) {
+    pontos = pontos + 1;
+    
+    pontuacaoLoop = setTimeout("pontuacao("+pontos+")",50);
+
+    timer.innerHTML = `Score: ${pontos}`;
+}
+
+function gameOver() {
+    alert(`Você perdeu!!! sua pontuação foi de : ${timer.innerHTML.replace('Score:', '')}`);
+
+}
+
+function mudaMario () {
+
+}
+
+
 
 
