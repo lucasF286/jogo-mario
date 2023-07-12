@@ -2,8 +2,13 @@ let pontuacaoLoop;
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const timer = document.querySelector(".timer");
+const button = document.querySelector(".buttonrestart");
 
 pontuacao(1);
+
+button.addEventListener("click", ()=> {
+    window.location.reload();
+})
 
 window.addEventListener("keypress", (e) => {
     e.preventDefault();
@@ -34,8 +39,6 @@ const loop = setInterval(() => {
 
         clearInterval(loop);
 
-        mudaMario();
-
         clearTimeout(pontuacaoLoop);
 
         setTimeout("gameOver()", 100);
@@ -54,13 +57,6 @@ function pontuacao (pontos) {
 
 function gameOver() {
     alert(`Você perdeu!!! sua pontuação foi de : ${timer.innerHTML.replace('Score:', '')}`);
-
 }
-
-function mudaMario () {
-
-}
-
-
 
 
