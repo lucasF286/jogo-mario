@@ -2,13 +2,22 @@ let pontuacaoLoop;
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
 const timer = document.querySelector(".timer");
-const button = document.querySelector(".buttonrestart");
+const game_over = document.querySelector(".gameOver");
+const gameOverh1 = document.querySelector(".gameOverh1");
+const gameOverP = document.querySelector(".gameOverP");
+const scoreP = document.querySelector(".scoreP");
+const reloadGame = document.querySelector(".reloadGame");
+let gameEnd = false;
 
 pontuacao(1);
 
-button.addEventListener("click", ()=> {
-    window.location.reload();
+window.addEventListener("keypress", (e)=> {
+    e.preventDefault();
+    if(e.code === "KeyR" && gameEnd) {
+        window.location.reload();
+    }
 })
+
 
 window.addEventListener("keypress", (e) => {
     e.preventDefault();
@@ -56,7 +65,12 @@ function pontuacao (pontos) {
 }
 
 function gameOver() {
-    alert(`Você perdeu!!! sua pontuação foi de : ${timer.innerHTML.replace('Score:', '')}`);
+    // alert(`Você perdeu!!! sua pontuação foi de : ${timer.innerHTML.replace('Score:', '')}`);
+    game_over.style.visibility = "visible";
+    gameOverP.style.visibility = "visible";
+    gameOverh1.innerHTML = `Game Over`;
+    scoreP.innerHTML = `Seu Score foi de: ${timer.innerHTML.replace('Score:', '')}`
+    gameEnd = true;
 }
 
 
