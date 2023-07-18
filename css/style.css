@@ -54,7 +54,8 @@ p {
 
 .gameOver {
     position: absolute;
-    margin-left: 36.8%;
+    margin-left: 50%;
+    transform: translate(-50%);
     margin-top: 4rem;
     text-align: center;
     visibility: hidden;
@@ -69,7 +70,8 @@ p {
 .gameOverP {
     position: absolute;
     font-size: 15px;
-    margin-left: 40%;
+    margin-left: 50%;
+    transform: translate(-50%);
     margin-top: 11rem;
     text-align: center;
     visibility: hidden;
