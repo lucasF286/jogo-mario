@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
-</head>
-<body>
+    <title>Dificuldade</title>
 
+    <script type="text/javascript">
+
+        function recuperaDificuldade() {
+            let dificuldade = document.getElementById("dificuldade").value;
+
+            window.location.href = "jogo.html?"+dificuldade;
+        }
+
+    </script>
+</head>
+
+<body>
     <div class="game-board">
+        <br>
+        <h4 style="display: inline; margin: 10px;">Dificuldade: </h4>
+        <select style="padding: 5px;" id="dificuldade">
+            <option value="1"> Fácil </option>
+            <option value="2"> Normal </option>
+            <option value="3"> Difícil </option>
+            <option value="4"> Insano </option>
+        </select>
+        </p>
         <img src="./imagens/clouds.png" class="clounds" alt="imagem das nuvens">
-        <span class="timer">Score: 000</span>
-        <div class="gameOver">
-            <h1 class="gameOverh1"></h1>
-        </div>
-        <span class="gameOverP">
-            <p class="scoreP"></p>
-            <p>Pressione "R" para reiniciar.</p>
-        </span>
+        <img src="./imagens/iniciar.png" class="iniciar" alt="botao que inicia o jogo" onclick="recuperaDificuldade()">
         <img src="./imagens/mario.gif" class="mario" alt="gif animado do mario">
-        <img src="./imagens/pipe.png" class="pipe" alt="cano do mario">
     </div>
-    <script type="text/javascript" src="js/script.js"></script>
 </body>
+
 </html>

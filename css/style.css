@@ -7,6 +7,10 @@
     font-family: "Press Start 2P", cursive;
 }
 
+a {
+    text-align: right;
+}
+
 p {
     margin-top: 20px;
 }
@@ -44,6 +48,11 @@ p {
     width: 550px;
     position: absolute;
     animation: clounds-animation 20s infinite linear;
+}
+
+.iniciar {
+    position: absolute;
+    cursor: pointer;
 }
 
 .timer {
@@ -86,6 +95,11 @@ p {
 .reloadGame {
     margin: 10px 10px;
     padding: 10px;
+}
+
+.menu {
+    text-align: right;
+    margin-right: 10px;
 }
 
 

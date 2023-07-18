@@ -9,6 +9,26 @@ const scoreP = document.querySelector(".scoreP");
 const reloadGame = document.querySelector(".reloadGame");
 let gameEnd = false;
 
+let url = window.location.search;
+let dificuldade = +url.replace("?", "");
+
+if (dificuldade === 1) {
+    pipe.style.animation = "pipe-animation 1.5s infinite linear";
+}
+
+if(dificuldade === 2) {
+    pipe.style.animation = "pipe-animation 1s infinite linear";
+}
+
+if(dificuldade === 3) {
+    pipe.style.animation = "pipe-animation 700ms infinite linear";
+}
+
+if(dificuldade === 4) {
+    pipe.style.animation = "pipe-animation 500ms infinite linear";
+
+}
+
 pontuacao(1);
 
 window.addEventListener("keypress", (e)=> {
@@ -28,7 +48,7 @@ window.addEventListener("keypress", (e) => {
 
     setTimeout(() => {
         mario.classList.remove("jump");
-    },500);
+    },450);
 })
 
 const loop = setInterval(() => {
